@@ -1,0 +1,96 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerForm", "OracleScriptRunnerForm\OracleScriptRunnerForm.csproj", "{C88B5B54-6467-422E-AD23-FC92363ACB00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunner", "OracleScriptRunner\OracleScriptRunner.csproj", "{1EBA647B-FCEC-400E-A820-0A89CE53CF17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerSettings", "OracleScriptRunnerSettings\OracleScriptRunnerSettings.csproj", "{AC5A0F51-4550-4458-A055-E3D5C279EA17}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerSettingsFile", "OracleScriptRunnerSettingsFile\OracleScriptRunnerSettingsFile.csproj", "{CA9AE31B-9240-478F-8A98-79880A57EDED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerSettingsFileTest", "OracleScriptRunnerSettingsFileTest\OracleScriptRunnerSettingsFileTest.csproj", "{2207BC45-849B-4EA5-A6AE-FE05722847BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerSettingsTest", "OracleScriptRunnerSettingsTest\OracleScriptRunnerSettingsTest.csproj", "{0A208ACD-6832-4780-89A1-968A1ED89D68}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A7B80DB4-87F8-4271-9D71-B0DE3953BF4D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{8C50AC9B-B23E-4764-B703-BF51BECFD600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Settings", "Settings", "{DEE501CD-3AAE-4FB4-9565-AB5FA77157D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerCmdSqlplus", "OracleScriptRunnerCmdSqlplus\OracleScriptRunnerCmdSqlplus.csproj", "{3244DCB2-FBE8-45EB-B95F-DD163536388D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerCmdSqlplusTest", "OracleScriptRunnerCmdSqlplusTest\OracleScriptRunnerCmdSqlplusTest.csproj", "{B7D902B6-1B91-444A-ACF2-AF427802430D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerFileBuilder", "OracleScriptRunnerFileBuilder\OracleScriptRunnerFileBuilder.csproj", "{BC030B76-93EA-4ABB-93A9-B1EAFBB86028}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OracleScriptRunnerFileBuilderTest", "OracleScriptRunnerFileBuilderTest\OracleScriptRunnerFileBuilderTest.csproj", "{AEB08846-E16C-419F-90EE-163D885E569D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C88B5B54-6467-422E-AD23-FC92363ACB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88B5B54-6467-422E-AD23-FC92363ACB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88B5B54-6467-422E-AD23-FC92363ACB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88B5B54-6467-422E-AD23-FC92363ACB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EBA647B-FCEC-400E-A820-0A89CE53CF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EBA647B-FCEC-400E-A820-0A89CE53CF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EBA647B-FCEC-400E-A820-0A89CE53CF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EBA647B-FCEC-400E-A820-0A89CE53CF17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC5A0F51-4550-4458-A055-E3D5C279EA17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5A0F51-4550-4458-A055-E3D5C279EA17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5A0F51-4550-4458-A055-E3D5C279EA17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5A0F51-4550-4458-A055-E3D5C279EA17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA9AE31B-9240-478F-8A98-79880A57EDED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA9AE31B-9240-478F-8A98-79880A57EDED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA9AE31B-9240-478F-8A98-79880A57EDED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA9AE31B-9240-478F-8A98-79880A57EDED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2207BC45-849B-4EA5-A6AE-FE05722847BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2207BC45-849B-4EA5-A6AE-FE05722847BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2207BC45-849B-4EA5-A6AE-FE05722847BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2207BC45-849B-4EA5-A6AE-FE05722847BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A208ACD-6832-4780-89A1-968A1ED89D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A208ACD-6832-4780-89A1-968A1ED89D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A208ACD-6832-4780-89A1-968A1ED89D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A208ACD-6832-4780-89A1-968A1ED89D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3244DCB2-FBE8-45EB-B95F-DD163536388D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3244DCB2-FBE8-45EB-B95F-DD163536388D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3244DCB2-FBE8-45EB-B95F-DD163536388D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3244DCB2-FBE8-45EB-B95F-DD163536388D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7D902B6-1B91-444A-ACF2-AF427802430D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7D902B6-1B91-444A-ACF2-AF427802430D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7D902B6-1B91-444A-ACF2-AF427802430D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7D902B6-1B91-444A-ACF2-AF427802430D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC030B76-93EA-4ABB-93A9-B1EAFBB86028}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC030B76-93EA-4ABB-93A9-B1EAFBB86028}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC030B76-93EA-4ABB-93A9-B1EAFBB86028}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC030B76-93EA-4ABB-93A9-B1EAFBB86028}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB08846-E16C-419F-90EE-163D885E569D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB08846-E16C-419F-90EE-163D885E569D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB08846-E16C-419F-90EE-163D885E569D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB08846-E16C-419F-90EE-163D885E569D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1EBA647B-FCEC-400E-A820-0A89CE53CF17} = {8C50AC9B-B23E-4764-B703-BF51BECFD600}
+		{AC5A0F51-4550-4458-A055-E3D5C279EA17} = {DEE501CD-3AAE-4FB4-9565-AB5FA77157D8}
+		{CA9AE31B-9240-478F-8A98-79880A57EDED} = {DEE501CD-3AAE-4FB4-9565-AB5FA77157D8}
+		{2207BC45-849B-4EA5-A6AE-FE05722847BF} = {A7B80DB4-87F8-4271-9D71-B0DE3953BF4D}
+		{0A208ACD-6832-4780-89A1-968A1ED89D68} = {A7B80DB4-87F8-4271-9D71-B0DE3953BF4D}
+		{3244DCB2-FBE8-45EB-B95F-DD163536388D} = {8C50AC9B-B23E-4764-B703-BF51BECFD600}
+		{B7D902B6-1B91-444A-ACF2-AF427802430D} = {A7B80DB4-87F8-4271-9D71-B0DE3953BF4D}
+		{BC030B76-93EA-4ABB-93A9-B1EAFBB86028} = {8C50AC9B-B23E-4764-B703-BF51BECFD600}
+		{AEB08846-E16C-419F-90EE-163D885E569D} = {A7B80DB4-87F8-4271-9D71-B0DE3953BF4D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {57878ED2-AF47-4056-9501-801EE1472E11}
+	EndGlobalSection
+EndGlobal
