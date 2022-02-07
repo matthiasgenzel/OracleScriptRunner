@@ -302,5 +302,10 @@ namespace OracleScriptRunnerForm
                 }
             }
         }
+
+        private void linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("explorer.exe", (sender as LinkLabel).Text);
+        }
     }
 }

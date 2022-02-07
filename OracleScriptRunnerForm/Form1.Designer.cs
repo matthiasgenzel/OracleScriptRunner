@@ -471,6 +471,7 @@ namespace OracleScriptRunnerForm
             this.linkLabel2.TabIndex = 4;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "https://github.com/matthiasgenzel/OracleScriptRunner/blob/main/LICENSE";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // label5
             // 
@@ -499,6 +500,7 @@ namespace OracleScriptRunnerForm
             this.linkLabel1.TabIndex = 1;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "https://github.com/matthiasgenzel/OracleScriptRunner";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel_LinkClicked);
             // 
             // label3
             // 
