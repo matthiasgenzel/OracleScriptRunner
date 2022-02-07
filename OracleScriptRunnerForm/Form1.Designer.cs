@@ -65,6 +65,10 @@ namespace OracleScriptRunnerForm
             this.panel14 = new System.Windows.Forms.Panel();
             this.btnSettingsSave = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -340,7 +344,7 @@ namespace OracleScriptRunnerForm
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel15.Location = new System.Drawing.Point(3, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1063, 704);
+            this.panel15.Size = new System.Drawing.Size(1063, 710);
             this.panel15.TabIndex = 5;
             // 
             // panel12
@@ -350,7 +354,7 @@ namespace OracleScriptRunnerForm
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(347, 0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(716, 704);
+            this.panel12.Size = new System.Drawing.Size(716, 710);
             this.panel12.TabIndex = 6;
             // 
             // groupBox2
@@ -360,7 +364,7 @@ namespace OracleScriptRunnerForm
             this.groupBox2.Location = new System.Drawing.Point(0, 338);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox2.Size = new System.Drawing.Size(716, 366);
+            this.groupBox2.Size = new System.Drawing.Size(716, 372);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Post-Script (after each batch per database)";
@@ -371,8 +375,10 @@ namespace OracleScriptRunnerForm
             this.txtSettingsPostScripts.Location = new System.Drawing.Point(10, 30);
             this.txtSettingsPostScripts.Multiline = true;
             this.txtSettingsPostScripts.Name = "txtSettingsPostScripts";
-            this.txtSettingsPostScripts.Size = new System.Drawing.Size(696, 326);
+            this.txtSettingsPostScripts.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtSettingsPostScripts.Size = new System.Drawing.Size(696, 332);
             this.txtSettingsPostScripts.TabIndex = 1;
+            this.txtSettingsPostScripts.WordWrap = false;
             // 
             // groupBox4
             // 
@@ -392,8 +398,10 @@ namespace OracleScriptRunnerForm
             this.txtSettingsPreScripts.Location = new System.Drawing.Point(10, 30);
             this.txtSettingsPreScripts.Multiline = true;
             this.txtSettingsPreScripts.Name = "txtSettingsPreScripts";
+            this.txtSettingsPreScripts.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtSettingsPreScripts.Size = new System.Drawing.Size(696, 298);
             this.txtSettingsPreScripts.TabIndex = 0;
+            this.txtSettingsPreScripts.WordWrap = false;
             // 
             // groupBox1
             // 
@@ -402,7 +410,7 @@ namespace OracleScriptRunnerForm
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(10);
-            this.groupBox1.Size = new System.Drawing.Size(347, 704);
+            this.groupBox1.Size = new System.Drawing.Size(347, 710);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Connection Strings";
@@ -413,17 +421,19 @@ namespace OracleScriptRunnerForm
             this.txtSettingsConnectionStrings.Location = new System.Drawing.Point(10, 30);
             this.txtSettingsConnectionStrings.Multiline = true;
             this.txtSettingsConnectionStrings.Name = "txtSettingsConnectionStrings";
-            this.txtSettingsConnectionStrings.Size = new System.Drawing.Size(327, 664);
+            this.txtSettingsConnectionStrings.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtSettingsConnectionStrings.Size = new System.Drawing.Size(327, 670);
             this.txtSettingsConnectionStrings.TabIndex = 1;
+            this.txtSettingsConnectionStrings.WordWrap = false;
             // 
             // panel14
             // 
             this.panel14.Controls.Add(this.btnSettingsSave);
             this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(3, 707);
+            this.panel14.Location = new System.Drawing.Point(3, 713);
             this.panel14.Name = "panel14";
             this.panel14.Padding = new System.Windows.Forms.Padding(10);
-            this.panel14.Size = new System.Drawing.Size(1063, 63);
+            this.panel14.Size = new System.Drawing.Size(1063, 57);
             this.panel14.TabIndex = 4;
             // 
             // btnSettingsSave
@@ -431,7 +441,7 @@ namespace OracleScriptRunnerForm
             this.btnSettingsSave.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnSettingsSave.Location = new System.Drawing.Point(10, 10);
             this.btnSettingsSave.Name = "btnSettingsSave";
-            this.btnSettingsSave.Size = new System.Drawing.Size(1043, 43);
+            this.btnSettingsSave.Size = new System.Drawing.Size(1043, 37);
             this.btnSettingsSave.TabIndex = 0;
             this.btnSettingsSave.Text = "Save";
             this.btnSettingsSave.UseVisualStyleBackColor = true;
@@ -439,6 +449,10 @@ namespace OracleScriptRunnerForm
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.linkLabel2);
+            this.tabPage3.Controls.Add(this.label5);
+            this.tabPage3.Controls.Add(this.label4);
+            this.tabPage3.Controls.Add(this.linkLabel1);
             this.tabPage3.Controls.Add(this.label3);
             this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
@@ -448,14 +462,52 @@ namespace OracleScriptRunnerForm
             this.tabPage3.Text = "Infos";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(131, 75);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(509, 20);
+            this.linkLabel2.TabIndex = 4;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "https://github.com/matthiasgenzel/OracleScriptRunner/blob/main/LICENSE";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(664, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "MIT";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "License";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(131, 31);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(372, 20);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "https://github.com/matthiasgenzel/OracleScriptRunner";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 20);
+            this.label3.Location = new System.Drawing.Point(19, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.Size = new System.Drawing.Size(106, 20);
             this.label3.TabIndex = 0;
-            this.label3.Text = "label3";
+            this.label3.Text = "Infos && Source";
             // 
             // Form1
             // 
@@ -538,6 +590,10 @@ namespace OracleScriptRunnerForm
         private System.Windows.Forms.Button btnSettingsSave;
         private System.Windows.Forms.TreeView tvConnections;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }
 
