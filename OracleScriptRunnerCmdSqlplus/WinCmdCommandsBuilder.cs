@@ -16,7 +16,7 @@ namespace OracleScriptRunnerCmdSqlplus
             if (doWriteHeader)
                 commands.Add(GetBatchHeaderSqlForSqlPlus(dbConnectionString));
 
-            commands.Add(GetSqlPlusCommand(dbConnectionString, SqlFilePath, useFullFileName));
+            commands.Add(GetSqlPlusCommand(dbConnectionString, useFullFileName));
 
             return commands;
         }
@@ -39,22 +39,41 @@ namespace OracleScriptRunnerCmdSqlplus
             return l;
         }
 
-        private ITerminalCommand GetSqlPlusCommand(
-            IDbConnectionString connection,
-            string sqlFilePath,
+        private string getFileName(
             bool useFullFileName)
         {
-            var fileName = useFullFileName ? sqlFilePath : Path.GetFileName(sqlFilePath);
-
-            var command = new WinCmdCommand
+            if (!string.IsNullOrEmpty(SqlFilePath))
             {
-                Text = $"echo quit | sqlplus -L -S {connection.ConnectionString} @{fileName}{getLogPart()}"
-            };
+                return " @" + (useFullFileName ? SqlFilePath : Path.GetFileName(SqlFilePath));
+            }
+
+            return string.Empty;
+        }
+
+        /*
+         returns sqlplus command with options for silent and w/o login prompt
+           if SqlFilePath is not set, sqlplus will be plainly opened
+           if set the file will be executed and sqlplus closed afterwards
+         */
+        private ITerminalCommand GetSqlPlusCommand(
+            IDbConnectionString connection,
+            bool useFullFileName)
+        {
+            // when one sql file is directly called -> always push quit at the end to make sure that 
+            // sqlplus will be closed
+            var alwaysQuit = !string.IsNullOrEmpty(SqlFilePath) ? "echo quit | " : string.Empty;
 
             /*
              * -S silent
              * -L no logon prompt
              */
+            var sqlPlusCall = $"sqlplus -L -S {connection.ConnectionString}";
+
+            var command = new WinCmdCommand
+            {
+                Text = $"{alwaysQuit}{sqlPlusCall}{getFileName(useFullFileName)}{getLogPart()}"
+            };
+            
             return command;
         }
     }

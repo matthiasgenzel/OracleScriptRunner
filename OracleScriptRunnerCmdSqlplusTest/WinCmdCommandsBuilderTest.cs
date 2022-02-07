@@ -39,18 +39,28 @@ namespace OracleScriptRunnerCmdSqlplusTest
 
         private string GetExecLine(bool useLog, bool fullFilePath)
         {
-            var filePath = fullFilePath ? sqlFilePath : Path.GetFileName(sqlFilePath);
+            var filePath = string.Empty;
+            var firstCommand = string.Empty;
+
+            if (!string.IsNullOrEmpty(winCmdCommandsBuilder.SqlFilePath))
+            {
+                filePath = "@" + (fullFilePath ? sqlFilePath : Path.GetFileName(sqlFilePath));
+                firstCommand = "echo quit | ";
+            }
 
             if (useLog)
-                return $"echo quit | sqlplus -L -S {dbConnectionString.ConnectionString} @{filePath} >> {logFilePath}";
+                return $"{firstCommand}sqlplus -L -S {dbConnectionString.ConnectionString} {filePath} >> {logFilePath}";
             else
-                return $"echo quit | sqlplus -L -S {dbConnectionString.ConnectionString} @{filePath}";
+                return $"{firstCommand}sqlplus -L -S {dbConnectionString.ConnectionString} {filePath}";
         }
 
         [Test]
         public void FullTerminalCommands()
         {
-            var cmd = winCmdCommandsBuilder.GetTerminalCommands(dbConnectionString, true, true)
+            var cmd = winCmdCommandsBuilder.GetTerminalCommands(
+                dbConnectionString: dbConnectionString,
+                useFullFileName: true,
+                doWriteHeader: true)
                 .Select(c => c.Text)
                 .ToArray();
 
@@ -61,22 +71,45 @@ namespace OracleScriptRunnerCmdSqlplusTest
         [Test]
         public void TerminalCommandsWOHeader()
         {
-            var cmd = winCmdCommandsBuilder.GetTerminalCommands(dbConnectionString, true, false)
+            var cmd = winCmdCommandsBuilder.GetTerminalCommands(
+                dbConnectionString: dbConnectionString, 
+                useFullFileName: true, 
+                doWriteHeader: false)
                 .Select(c => c.Text)
                 .ToArray();
 
-            Assert.AreEqual(GetExecLine(true, true).Trim(), cmd[0]);
+            Assert.AreEqual(GetExecLine(useLog: true, fullFilePath: true).Trim(), cmd[0]);
         }
 
         [Test]
         public void TerminalCommandsWithShortFileName()
         {
-            var cmd = winCmdCommandsBuilder.GetTerminalCommands(dbConnectionString, false, true)
+            var cmd = winCmdCommandsBuilder.GetTerminalCommands(
+                dbConnectionString: dbConnectionString,
+                useFullFileName: false,
+                doWriteHeader: true)
                 .Select(c => c.Text)
                 .ToArray();
 
-            Assert.AreEqual(GetHeaderLine(true).Trim(), cmd[0]);
-            Assert.AreEqual(GetExecLine(true, false).Trim(), cmd[1]);
+            Assert.AreEqual(GetHeaderLine(useLog: true).Trim(), cmd[0]);
+            Assert.AreEqual(GetExecLine(useLog: true, fullFilePath: false).Trim(), cmd[1]);
+        }
+
+        [Test]
+        public void TerminalCommandsWOFileName()
+        {
+            winCmdCommandsBuilder.SqlFilePath = string.Empty;
+            winCmdCommandsBuilder.LogFilePath = string.Empty;
+
+            var cmd = winCmdCommandsBuilder.GetTerminalCommands(
+                dbConnectionString: dbConnectionString,
+                useFullFileName: false,
+                doWriteHeader: true)
+                .Select(c => c.Text)
+                .ToArray();
+
+            Assert.AreEqual(GetHeaderLine(useLog: false).Trim(), cmd[0]);
+            Assert.AreEqual(GetExecLine(useLog: false, fullFilePath: false).Trim(), cmd[1]);
         }
     }
 }
