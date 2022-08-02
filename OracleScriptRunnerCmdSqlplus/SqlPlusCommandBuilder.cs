@@ -20,6 +20,7 @@ namespace OracleScriptRunnerCmdSqlplus
                         $"prompt executing {Path.GetFileName(f.PromptName)}");
 
                 sqlCommands.Add($"@{Path.GetFileName(f.FilePath)}");
+                sqlCommands.Add($"/");
             }
 
             return sqlCommands;

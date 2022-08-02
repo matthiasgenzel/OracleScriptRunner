@@ -35,14 +35,15 @@ namespace OracleScriptRunnerCmdSqlplusTest
             var builder = GetBuilder();
             var commands = builder.GetCommands(true);
 
-            Assert.AreEqual(cntFiles * 2, commands.Count, "wrong number of sql commands");
+            Assert.AreEqual(cntFiles * 3, commands.Count, "wrong number of sql commands");
             Assert.Multiple(() =>
             {
                 int i = 0;
                 foreach (var file in builder.Files)
                 {
-                    Assert.AreEqual($"prompt executing {file.PromptName}", commands[i * 2]);
-                    Assert.AreEqual($"@{file.FilePath}", commands[i * 2 + 1]);
+                    Assert.AreEqual($"prompt executing {file.PromptName}", commands[i * 3]);
+                    Assert.AreEqual($"@{file.FilePath}", commands[i * 3 + 1]);
+                    Assert.AreEqual($"/", commands[i * 3 + 2]);
 
                     i++;
                 }
@@ -55,13 +56,16 @@ namespace OracleScriptRunnerCmdSqlplusTest
             var builder = GetBuilder();
             var commands = builder.GetCommands(false);
 
-            Assert.AreEqual(cntFiles, commands.Count, "wrong number of sql commands");
+            Assert.AreEqual(cntFiles * 2, commands.Count, "wrong number of sql commands");
             Assert.Multiple(() =>
             {
                 int i = 0;
                 foreach (var file in builder.Files)
                 {
-                    Assert.AreEqual($"@{file.FilePath}", commands[i++]);
+                    Assert.AreEqual($"@{file.FilePath}", commands[i * 2]);
+                    Assert.AreEqual($"/", commands[i * 2 +1]);
+
+                    i++;
                 }
             });
         }
@@ -78,6 +82,7 @@ namespace OracleScriptRunnerCmdSqlplusTest
             {
                 testText += $"prompt executing {file.PromptName}" + Environment.NewLine;
                 testText += $"@{file.FilePath}" + Environment.NewLine;
+                testText += $"/" + Environment.NewLine;
             }
 
             Assert.AreEqual(testText.Trim(), text);
